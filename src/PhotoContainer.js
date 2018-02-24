@@ -7,6 +7,7 @@ class PhotoContainer extends Component {
   constructor(props) {
     super(props);
     this.imageLink = this.props.data.imageLink.split('.')[0];
+    this.userIconLink = this.props.data.userIconLink.split('.')[0];
   }
 
   render() {

@@ -1,8 +1,8 @@
-import damarionei2 from './damarionei2.jpeg'
-import heacan1 from './heacan1.jpeg'
-import kaedenor1 from './kaedenor1.jpeg'
-import ricpena1 from './ricpena1.jpeg'
-import zekebates from './zekebates.jpeg'
+import damarionei2 from './damarionei2.jpg'
+import heacan1 from './heacan1.jpg'
+import kaedenor1 from './kaedenor1.jpg'
+import ricpena1 from './ricpena1.jpg'
+import zekebates from './zekebates.jpg'
 
 export default {
   damarionei2,
