@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import images from './images';
+// import avatars from './avatars';
 import PhotoContainer from './PhotoContainer';
+import photoCardsData from './photoCardsData.json'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        {Object.keys(images).map((key) => (
-          <PhotoContainer image={images[key]}/>
+        {photoCardsData.map((data) => (
+          <PhotoContainer data={data}/>
         ))}
       </div>
     );
