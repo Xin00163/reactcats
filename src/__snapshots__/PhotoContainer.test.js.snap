@@ -4,23 +4,40 @@ exports[`renders and matches our snapshot 1`] = `
 <div
   className="PhotoContainer"
 >
-  <img
-    src={undefined}
-  />
   <div
-    className="Username"
+    className="User"
   >
-    heacan
+    <img
+      className="Avatar"
+      src={
+        Object {
+          "process": [Function],
+        }
+      }
+    />
+    <div
+      className="Username"
+    >
+      heacan
+    </div>
   </div>
   <img
+    className="Image"
     src={
       Object {
         "process": [Function],
       }
     }
   />
-  <p>
+  <span
+    className="Likes"
+  >
+    53
+  </span>
+  <div
+    className="Description"
+  >
     A lie is like a cat: You need to stop it before it gets out the door or it’s really hard to catch.
-  </p>
+  </div>
 </div>
 `;
