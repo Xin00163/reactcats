@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import images from './images';
 import avatars from './avatars';
+import './PhotoContainer.css';
 
 class PhotoContainer extends Component {
 
@@ -13,12 +14,12 @@ class PhotoContainer extends Component {
   render() {
     return (
       <div className='PhotoContainer'>
-        <img src={avatars[this.userIconLink]} />
-        <div className="Username">
-          {this.props.data.username}
+        <div className='User'>
+          <img className='Avatar' src={avatars[this.userIconLink]} />
+          <div className="Username">{this.props.data.username}</div>
         </div>
-        <img src={images[this.imageLink]} />
-        <p>{this.props.data.description}</p>
+        <img className="Image" src={images[this.imageLink]} />
+        <div className="Description">{this.props.data.description}</div>
       </div>
     );
   }
