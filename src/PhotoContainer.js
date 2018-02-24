@@ -12,6 +12,7 @@ class PhotoContainer extends Component {
     return (
       <div className='PhotoContainer'>
         <img src={images[this.imageLink]} />
+        <p>{this.props.data.description}</p>
       </div>
     );
   }

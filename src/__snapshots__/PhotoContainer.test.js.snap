@@ -11,5 +11,8 @@ exports[`renders and matches our snapshot 1`] = `
       }
     }
   />
+  <p>
+    A lie is like a cat: You need to stop it before it gets out the door or it’s really hard to catch.
+  </p>
 </div>
 `;
