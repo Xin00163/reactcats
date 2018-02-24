@@ -29,6 +29,13 @@ exports[`renders and matches our snapshot 1`] = `
       }
     }
   />
+  <i
+    className="fa fa-heart"
+    id="Click-like"
+    onClick={[Function]}
+  >
+    true
+  </i>
   <span
     className="Likes"
   >

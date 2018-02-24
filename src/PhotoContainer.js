@@ -14,7 +14,22 @@ class PhotoContainer extends Component {
       likes: this.props.data.likes,
       liked: this.props.data.liked
     };
+    this.likeClick = this.likeClick.bind(this);
+  }
 
+  likeClick(e) {
+    e.preventDefault();
+
+    this.setState(prevState => {
+
+      // console.log(prevState.like)
+      if (!prevState.liked) {
+        return {
+          likes: prevState.likes + 1,
+          liked: !prevState.liked
+        }
+      }
+    });
   }
 
 
@@ -26,6 +41,7 @@ class PhotoContainer extends Component {
           <div className='Username'>{this.props.data.username}</div>
         </div>
         <img className='Image' src={images[this.imageLink]} />
+        <i id='Click-like' onClick={this.likeClick} className={(this.state.liked ? "fa fa-heart" : "fa fa-heart-o")}>{this.state.liked.toString()}</i>
         <span className='Likes'>{this.state.likes}</span>
         <div className='Description'>{this.props.data.description}</div>
       </div>
