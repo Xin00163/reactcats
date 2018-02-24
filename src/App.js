@@ -8,6 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1 className="Title">React Cats</h1>
         {photoCardsData.map((data) => (
           <PhotoContainer data={data}/>
         ))}

@@ -38,11 +38,13 @@ class PhotoContainer extends Component {
       <div className='PhotoContainer'>
         <div className='User'>
           <img className='Avatar' src={avatars[this.userIconLink]} />
-          <div className='Username'>{this.props.data.username}</div>
+          <h2 className='Username'>{this.props.data.username}</h2>
         </div>
         <img className='Image' src={images[this.imageLink]} />
-        <i id='Click-like' onClick={this.likeClick} className={(this.state.liked ? "fa fa-heart" : "fa fa-heart-o")}>{this.state.liked.toString()}</i>
-        <span className='Likes'>{this.state.likes}</span>
+        <div className='Like'>
+          <i id='Click-like' onClick={this.likeClick} className={(this.state.liked ? "fa fa-heart" : "fa fa-heart-o")}></i>
+          <span className='Likes'>{this.state.likes}</span>
+        </div>
         <div className='Description'>{this.props.data.description}</div>
       </div>
     );

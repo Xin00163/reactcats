@@ -1,3 +1,10 @@
 .App {
   text-align: center;
+  margin: 0 20%;
+}
+
+.Title {
+  text-align: left;
+  color: #333;
+  font-family: cursive;
 }
