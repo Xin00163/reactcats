@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import images from './images';
+import avatars from './avatars';
 
 class PhotoContainer extends Component {
 
@@ -11,6 +12,10 @@ class PhotoContainer extends Component {
   render() {
     return (
       <div className='PhotoContainer'>
+        <img src={avatars[this.userIconLink]} />
+        <div className="Username">
+          {this.props.data.username}
+        </div>
         <img src={images[this.imageLink]} />
         <p>{this.props.data.description}</p>
       </div>

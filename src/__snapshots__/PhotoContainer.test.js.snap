@@ -5,6 +5,14 @@ exports[`renders and matches our snapshot 1`] = `
   className="PhotoContainer"
 >
   <img
+    src={undefined}
+  />
+  <div
+    className="Username"
+  >
+    heacan
+  </div>
+  <img
     src={
       Object {
         "process": [Function],
