@@ -4,7 +4,7 @@ class PhotoContainer extends Component {
   render() {
     return (
       <div className='PhotoContainer'>
-        NI HAO!!!!
+        <img src={this.props.image} />
       </div>
     );
   }

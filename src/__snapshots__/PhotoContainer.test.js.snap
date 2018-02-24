@@ -4,6 +4,12 @@ exports[`renders and matches our snapshot 1`] = `
 <div
   className="PhotoContainer"
 >
-  NI HAO!!!!
+  <img
+    src={
+      Object {
+        "process": [Function],
+      }
+    }
+  />
 </div>
 `;
