@@ -15,11 +15,11 @@ exports[`PhotoContainer renders and matches our snapshot 1`] = `
         }
       }
     />
-    <div
+    <h2
       className="Username"
     >
       heacan
-    </div>
+    </h2>
   </div>
   <img
     className="Image"
@@ -29,18 +29,20 @@ exports[`PhotoContainer renders and matches our snapshot 1`] = `
       }
     }
   />
-  <i
-    className="fa fa-heart"
-    id="Click-like"
-    onClick={[Function]}
+  <div
+    className="Like"
   >
-    true
-  </i>
-  <span
-    className="Likes"
-  >
-    53
-  </span>
+    <i
+      className="fa fa-heart"
+      id="Click-like"
+      onClick={[Function]}
+    />
+    <span
+      className="Likes"
+    >
+      53
+    </span>
+  </div>
   <div
     className="Description"
   >

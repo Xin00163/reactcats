@@ -1,31 +1,48 @@
-# MVF Developer Tests
-## React (cats gallery)
+# Reactcats
 
-Thanks for your interest in a developer role at MVF.
+### Overview
 
-We have a simple project which we would like you to take a look at in your own time.
+Reactcats is an React app made as part of the technical test for MVF. The goal is to implement the stories in userStories.md to build a photo feed gallery.
 
-You can spend as much or as little time on it as you wish, but if we have asked you to take a look at this, we would usually expect to receive a response in a 3-4 days.
+Technologies used:
+- Javascript
+- React
+- Jest
+- Enzyme
 
-The task is to build a React app based on the data in this repository. We would like you to attempt this challenge using React, but aside from that you can use any language(s) you are familiar with, using any other libraries, modules or frameworks you feel appropriate. See it as a opportunity to showcase your professional software engineering skills.
+### User instructions
 
-How would you implement this? Fork our repo and let us see your ideas!
+- Check if you have node installed by running `$ node -v`. If not, please install [node](https://nodejs.org/en/download/)
 
-### Challenge
-Implement the stories in userStories.md to build a photo feed gallery.
+- Clone the repo
+`$ git clone git@bitbucket.org:Xin00163/reactcats.git`
 
-If you wish, you can refer to wireframes wireframe.png and bonus_stories_wireframe.png to guide you.
+- Install dependencies by running `$ npm install`
 
-The data describing the gallery contents is located in photoCardsData.json
+- To launch the app, run `$ npm start` then navigate to `http://localhost:3000`
 
-Your app should be able to take any json in a similar format and display the relevant gallery.
+- Use `$ npm test` to run the test
 
-### Resources
-You don't have to use these, but you may find them helpful:
+### My Approach
+I created a PhotoContainer component, which includes the user avatar, user name, image, image description and like counter with icon.
 
-Create React App - [https://github.com/facebook/create-react-app](https://github.com/facebook/create-react-app)
-React Starter Kit - [https://github.com/rm-bergmann/app-starter-kit](https://github.com/rm-bergmann/app-starter-kit)
+The first problem I faced was to figure out how to test. It seemed to me that testing user avatar, user name, image, image description all appear at the right place is UI test. While researching I came across Jest's snapshot and it seemed like a good way to do UI tests. I found [Jest's documentation](https://facebook.github.io/jest/docs/en/snapshot-testing.html) and the suggested reading material very helpful. In terms of checking the logic of like count, it should be unit test, so I used Enzyme.
 
----
-### MVF
-Do you want to work with the Smartest Tech and the Sharpest Minds? Apply at: http://www.mvfglobal.com/vacancies
+The second problem was to import the images. I wanted to import the entire folder but I couldn't do it without using an index.js file to import it and export it again.
+
+The third problem was to do with handling static assets. I came across the following error "jest: Test suite failed to run, SyntaxError: Unexpected token import" and it turned out that Jest does not understand extension like png or jpeg. After checking StackOverflow and the official doc, I added the configuration and a transformer file to return the basename of a file (such that require('logo.jpg'); returns 'logo').
+
+Lastly, as this is my second time using React, the idea of using the constructor to initialize state and calling setState() outside constructor all seem a bit new to me. Luckily, [React's documentation](https://reactjs.org/docs/react-component.html) has some good info.
+
+
+### Screenshots
+React Cats App:
+![Reactcats1](https://i.imgur.com/mH751zZ.png)
+![Reactcats2](https://i.imgur.com/F2fn0eN.png)
+
+Tests passing:
+![Tests](https://i.imgur.com/AvKsep7.png)
+
+### Future Plans
+- Complete bonus user stories
+- Use mock data and sinon spy

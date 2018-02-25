@@ -22,7 +22,6 @@ class PhotoContainer extends Component {
 
     this.setState(prevState => {
 
-      // console.log(prevState.like)
       if (!prevState.liked) {
         return {
           likes: prevState.likes + 1,
