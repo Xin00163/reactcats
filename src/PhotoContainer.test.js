@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import PhotoContainer from './PhotoContainer';
 import photoCardsData from './photoCardsData.json'
@@ -23,28 +23,29 @@ describe('Liked state', () => {
   it('should have class "fa-heart-o" if liked state is false', () => {
       const wrapper = mount(<PhotoContainer data={photoCardsData[1]} />);
       expect(wrapper.state('liked')).toEqual(false);
-      expect(wrapper.find('.Likes').hasClass('fa-heart-o'));
+      expect(wrapper.find('#Click-like').hasClass('fa-heart-o')).toEqual(true);
+
     });
 
   it('should have class "fa-heart" if liked state is true', () => {
       const wrapper = mount(<PhotoContainer data={photoCardsData[0]} />);
       expect(wrapper.state('liked')).toEqual(true);
-      expect(wrapper.find('.Likes').hasClass('fa-heart'));
+      expect(wrapper.find('#Click-like').hasClass('fa-heart')).toEqual(true);
     });
 });
 
 describe('LikeClick', () => {
   it('clicking on unliked post, update the likes count and change the state to like', () => {
       const wrapper = mount(<PhotoContainer data={photoCardsData[1]} />);
-      wrapper.find('#Click-like').simulate('click')
+      wrapper.find('#Click-like').simulate('click');
       expect(wrapper.state('liked')).toEqual(true);
       expect(wrapper.find('.Likes').text()).toEqual('674');
     });
 
-  it('clicking on liked post, do not update the likes count or change the state', () => {
+  it('clicking on liked post, reduce the likes count and change the state', () => {
       const wrapper = mount(<PhotoContainer data={photoCardsData[0]} />);
-      wrapper.find('#Click-like').simulate('click')
-      expect(wrapper.state('liked')).toEqual(true);
-      expect(wrapper.find('.Likes').text()).toEqual('53');
+      wrapper.find('#Click-like').simulate('click');
+      expect(wrapper.state('liked')).toEqual(false);
+      expect(wrapper.find('.Likes').text()).toEqual('52');
   });
 });

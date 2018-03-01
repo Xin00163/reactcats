@@ -12,29 +12,26 @@ class PhotoContainer extends Component {
 
     this.state = {
       likes: this.props.data.likes,
-      liked: this.props.data.liked
+      liked: this.props.data.liked,
+      showPost: true,
     };
     this.likeClick = this.likeClick.bind(this);
   }
 
+
   likeClick(e) {
     e.preventDefault();
-
-    this.setState(prevState => {
-
-      if (!prevState.liked) {
-        return {
-          likes: prevState.likes + 1,
-          liked: !prevState.liked
-        }
-      }
-    });
+    this.setState(prevState => ({
+      likes: prevState.liked ? prevState.likes - 1 : prevState.likes + 1,
+      liked: !prevState.liked
+    }));
   }
 
 
   render() {
     return (
-      <div className='PhotoContainer'>
+      <div className={'PhotoContainer' + (this.state.showPost ? '' : ' deleted')}>
+        <button id='Click-delete' onClick={this.onDeleteClick}>Delete post</button>
         <div className='User'>
           <img className='Avatar' src={avatars[this.userIconLink]} />
           <h2 className='Username'>{this.props.data.username}</h2>
