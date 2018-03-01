@@ -12,8 +12,7 @@ class PhotoContainer extends Component {
 
     this.state = {
       likes: this.props.data.likes,
-      liked: this.props.data.liked,
-      showPost: true,
+      liked: this.props.data.liked
     };
     this.likeClick = this.likeClick.bind(this);
   }
@@ -30,8 +29,7 @@ class PhotoContainer extends Component {
 
   render() {
     return (
-      <div className={'PhotoContainer' + (this.state.showPost ? '' : ' deleted')}>
-        <button id='Click-delete' onClick={this.onDeleteClick}>Delete post</button>
+      <div className='PhotoContainer'>
         <div className='User'>
           <img className='Avatar' src={avatars[this.userIconLink]} />
           <h2 className='Username'>{this.props.data.username}</h2>

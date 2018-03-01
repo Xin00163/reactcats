@@ -4,12 +4,6 @@ exports[`PhotoContainer renders and matches our snapshot 1`] = `
 <div
   className="PhotoContainer"
 >
-  <button
-    id="Click-delete"
-    onClick={undefined}
-  >
-    Delete post
-  </button>
   <div
     className="User"
   >
